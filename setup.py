@@ -1,10 +1,17 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
-setup(name="ytspectro",
+setup(
+    name="ytspectro",
     version="0.0.1",
-    url = 'https://github.com/jdlozanom/youtube-to-spectrogram',
+    packages=find_packages(where='ytspectro'),
+    url='https://github.com/jdlozanom/youtube-to-spectrogram',
     description="Spectrogram maker from youtube audios",
     author="Juan Diego Lozano",
     license="MIT",
-    packages=['ytspectro'],
+    install_requires=[
+        'ffmpeg-python~=0.2.0',
+        'librosa~=0.7.2',
+        'numba==0.48.0',
+        'pytube3~=9.6.4'
+    ]
 )
